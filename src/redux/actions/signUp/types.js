@@ -1,0 +1,6 @@
+export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
+export const SIGN_UP_FAIL = 'SIGN_UP_FAIL';
+
+export const SET_AUTH_LOADING = 'SET_AUTH_LOADING';
+
+export const REMOVE_AUTH_LOADING = 'REMOVE_AUTH_LOADING';

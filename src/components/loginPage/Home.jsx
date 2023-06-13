@@ -19,7 +19,10 @@ const Home = ({ login, isAuthenticated, loading, user }) => {
     login(email, password);
   };
 
-  if (isAuthenticated) {
+  localStorage.removeItem("Id");
+
+  if (isAuthenticated){
+    localStorage.setItem("Id", user[0].Id);
     return <Navigate to="/plans" />;
   }
 

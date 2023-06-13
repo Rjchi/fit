@@ -1,17 +1,14 @@
-import { connect } from 'react-redux';
+import Navbar from '../../navegation/nav'
+import Footer from '../../navegation/foo'
 
-const Layout = ({children}) => {
+function Layout({ children }) {
     return (
         <div>
-            {children}
+            <Navbar />
+                {children}
+            <Footer />
         </div>
-    )
-}
+    );
+};
 
-const mapStateToProps = state => ({
-
-})
-
-export default connect(mapStateToProps, {
-
-}) (Layout);
+export default Layout;

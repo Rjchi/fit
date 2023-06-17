@@ -1,0 +1,6 @@
+export const DELETE_SUCCESS = 'DELETE_SUCCESS';
+export const DELETE_FAIL = 'DELETE_FAIL';
+
+export const SET_AUTH_LOADING = 'SET_AUTH_LOADING';
+
+export const REMOVE_AUTH_LOADING = 'REMOVE_AUTH_LOADING';

@@ -1,0 +1,6 @@
+export const FILTER_SUCCESS = 'FILTER_SUCCESS';
+export const FILTER_FAIL = 'FILTER_FAIL';
+
+export const SET_AUTH_LOADING = 'SET_AUTH_LOADING';
+
+export const REMOVE_AUTH_LOADING = 'REMOVE_AUTH_LOADING';

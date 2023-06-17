@@ -21,8 +21,8 @@ const Profile = ({ profile, e_profile, customerId }) => {
 
   }, [navigate, e_profile])
 
-  console.log(customerId);
-  console.log(e_profile);
+  // console.log(customerId);
+  // console.log(e_profile);
 
   if (customerId === null || customerId === undefined) {
     return <Navigate to="/login" />;

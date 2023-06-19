@@ -1,0 +1,11 @@
+.ContainerG {
+    background-color: purple;
+    width: 100%;
+    height: 100vh;
+}
+
+.Target {
+    display: grid;
+    grid-template-columns: auto auto;
+
+}

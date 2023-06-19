@@ -8,6 +8,8 @@ import Plan from "./Plan";
 import Layout from "../../hocs/layouts/Layout";
 import Records from "../Admin/Records";
 
+import styles from '../../styles/PlanList.module.css'
+
 const PlanList = ({ list_plans, plans, customerId }) => {
   const admin = localStorage.getItem("Admin")
   const navigate = useNavigate();
@@ -21,8 +23,8 @@ const PlanList = ({ list_plans, plans, customerId }) => {
   } else {
     return (
       <Layout>
-        <div className="overflow-hidden bg-white">
-          <ul className="divide-y space-y-8 gap-8 divide-gray-200">
+        <div className={styles.ContainerG}>
+          <div className={styles.Target}>
           {
             admin !== "0" && admin === "1"?
             <Records/>:
@@ -33,7 +35,7 @@ const PlanList = ({ list_plans, plans, customerId }) => {
                 ))}
             </>
           }
-          </ul>
+          </div>
         </div>
       </Layout>
     );

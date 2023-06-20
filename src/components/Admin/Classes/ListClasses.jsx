@@ -1,11 +1,15 @@
 import { connect } from "react-redux";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import OneClasses from "./OneClasses"
+import OneClasses from "./OneClasses";
 
 import { classesList } from "../../../redux/actions/classesList/classesList";
 import Layout from "../../../hocs/layouts/Layout";
 import Records from "../Records";
+
+import styles from "../../../styles/ListCustomer.module.css";
+
+import User from "../../../assets/bicicleta.png";
 
 const ListClasses = ({ classesList, setClasses, customerId }) => {
   const navigate = useNavigate();
@@ -19,18 +23,22 @@ const ListClasses = ({ classesList, setClasses, customerId }) => {
   } else {
     return (
       <Layout>
-        <Records/>
-        <div className="overflow-hidden bg-white">
-          <ul className="divide-y space-y-8 gap-8 divide-gray-200">
+        <Records />
+        <div className={styles.ContainerG}>
+          <div className={styles.Title}>
+            <h2>Classes:</h2>
+            <img src={User} alt="customerIcon" />
+          </div>
+          <div className={styles.ContainerGrid}>
             <>
-              {setClasses&&
+              {setClasses &&
                 setClasses.map((clas, index) => (
                   <OneClasses key={index} clas={clas} />
                 ))}
             </>
-          </ul>
+          </div>
         </div>
-        </Layout>
+      </Layout>
     );
   }
 };

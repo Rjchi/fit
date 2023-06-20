@@ -8,6 +8,7 @@ import {
 const initialState = {
     user: null,
     isAuthenticated: null,
+    error: null,
     loading: null,
 };
 
@@ -20,6 +21,7 @@ const login = (state = initialState, action) =>{
                 ...state,
                 user: payload,
                 isAuthenticated: payload !== "Error" ? true : false,
+                error: payload === "Error" ? true : false,
                 loading: false,
             }
         case LOGIN_FAIL:

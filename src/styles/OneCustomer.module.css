@@ -1,0 +1,57 @@
+.OneTarget {
+    width: 300px;
+    height: 220px;
+    background-color: rgb(12, 71, 71);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 4px 4px #000;
+    padding: 5px;
+    border: 1px solid #000;
+}
+
+.ContainerP {
+    width: 100%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.Btn {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.ContainerP label {
+    color: #fff;
+    font-weight: bold;
+}
+
+.ContainerP input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 2px solid #000;
+}
+
+.Btn button {
+    width: 30%;
+    height: 30px;
+    border: 1px solid #000;
+    box-shadow: 3px 3px 3px #000;
+    background-color: #fff;
+    border-radius: 15px;
+    cursor: pointer;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}

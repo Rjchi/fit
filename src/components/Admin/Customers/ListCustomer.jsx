@@ -7,6 +7,10 @@ import { customers } from "../../../redux/actions/customers/customers";
 import Layout from "../../../hocs/layouts/Layout";
 import Records from "../Records";
 
+import styles from "../../../styles/ListCustomer.module.css"
+
+import User from "../../../assets/usuario.png"
+
 const ListCustomer = ({ customers, customersList, customerId }) => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -20,15 +24,19 @@ const ListCustomer = ({ customers, customersList, customerId }) => {
     return (
       <Layout>
         <Records/>
-        <div className="overflow-hidden bg-white">
-          <ul className="divide-y space-y-8 gap-8 divide-gray-200">
+        <div className={styles.ContainerG}>
+          <div className={styles.Title}>
+            <h2>Customers:</h2>
+            <img src={User} alt="customerIcon" />
+          </div>
+          <div className={styles.ContainerGrid}>
             <>
               {customersList &&
                 customersList.map((customer, index) => (
                   <OneCustomer key={index} customer={customer} />
                 ))}
             </>
-          </ul>
+          </div>
         </div>
         </Layout>
     );

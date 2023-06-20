@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import { membership } from "../../redux/actions/membership/membership";
 import { Navigate } from "react-router-dom";
 
+import Layout from "../../hocs/layouts/Layout";
+import styles from "../../styles/Membership.module.css";
+
 const Membership = ({ membershipById, membership, customerId }) => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -32,13 +35,34 @@ const Membership = ({ membershipById, membership, customerId }) => {
   const firstMembership = membershipById[0];
 
   return (
-    <div>
-      {firstMembership.Id}
-      {firstMembership.Cliente}
-      {firstMembership.Nombre}
-      {firstMembership.Duracion}
-      {firstMembership.FechaInicio}
-    </div>
+    <Layout>
+      <div className={styles.ContainerG}>
+      <div className={styles.OneTarget}>
+        <h2>{firstMembership.Nombre}</h2>
+        <div className={styles.Description}>
+          <p>Description:</p>
+        </div>
+        <div className={styles.Duration}>
+          <p>
+            {firstMembership.Duracion}
+            <span>
+              -month contract counting from the selection of the membership.
+            </span>
+          </p>
+        </div>
+        <div className={styles.Class}>
+          <p>Customer:</p>
+        </div>
+        <div className={styles.Classes}>{firstMembership.Cliente}</div>
+        <div className={styles.HoraryT}>
+          <p>Start Date:</p>
+        </div>
+        <div className={styles.Horary}>
+          <p>{firstMembership.FechaInicio}</p>
+        </div>
+      </div>
+      </div>
+    </Layout>
   );
 };
 

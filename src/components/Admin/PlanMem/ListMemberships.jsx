@@ -1,11 +1,15 @@
 import { connect } from "react-redux";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import OneMemberships from "./OneMemberships"
+import OneMemberships from "./OneMemberships";
 
 import { memberships } from "../../../redux/actions/memberships/memberships";
 import Layout from "../../../hocs/layouts/Layout";
 import Records from "../Records";
+
+import styles from "../../../styles/ListCustomer.module.css";
+
+import User from "../../../assets/estrella.png";
 
 const ListMemberships = ({ memberships, membershipsList, customerId }) => {
   const navigate = useNavigate();
@@ -19,18 +23,22 @@ const ListMemberships = ({ memberships, membershipsList, customerId }) => {
   } else {
     return (
       <Layout>
-        <Records/>
-        <div className="overflow-hidden bg-white">
-          <ul className="divide-y space-y-8 gap-8 divide-gray-200">
+        <Records />
+        <div className={styles.ContainerG}>
+          <div className={styles.Title}>
+            <h2>Memberships:</h2>
+            <img src={User} alt="customerIcon" />
+          </div>
+          <div className={styles.ContainerGrid}>
             <>
-              {membershipsList&&
+              {membershipsList &&
                 membershipsList.map((membership, index) => (
                   <OneMemberships key={index} membership={membership} />
                 ))}
             </>
-          </ul>
+          </div>
         </div>
-        </Layout>
+      </Layout>
     );
   }
 };

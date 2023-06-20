@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 import { classes } from "../../redux/actions/classes/classes";
 import { Navigate } from "react-router-dom";
 
-import OneClass from './OneClass'
+import OneClass from "./OneClass";
 import Layout from "../../hocs/layouts/Layout";
+
+import styles from "../../styles/classses.module.css";
 
 const Classes = ({ classesById, classes, customerId }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -34,13 +36,16 @@ const Classes = ({ classesById, classes, customerId }) => {
 
   return (
     <Layout>
-        <div>
-            {classesById&&classesById.map((datos, index) => (
-                <OneClass key={index} data={datos}/>
+      <div className={styles.ContainerG}>
+        <div className={styles.ContainerClass}>
+          {classesById &&
+            classesById.map((datos, index) => (
+              <OneClass key={index} data={datos} />
             ))}
         </div>
+      </div>
     </Layout>
-  )
+  );
 };
 
 const mapStateToProps = (state) => ({

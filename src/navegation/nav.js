@@ -74,7 +74,10 @@ function Nav() {
             <Link to="/plans">
               <img src={Logo} alt="logo" />
             </Link>
-            <p>Fitness</p>
+            <p onClick={(e) => {
+              localStorage.removeItem("Id")
+              navigate(0)
+            }}>Fitness</p>
           </div>
           <div className={styles.Search}>
             <p>

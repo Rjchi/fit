@@ -8,7 +8,7 @@ import noVisi from "../../assets/noVisi.png";
 import Logo from "../../assets/logo.png";
 import styles from "../../styles/Home.module.css";
 
-const Home = ({ login, isAuthenticated, loading, user }) => {
+const Home = ({ login, isAuthenticated, loading, user, error }) => {
   const [see, setSee] = useState(false);
   const [formData, setFormData] = useState({
     password: "",
@@ -57,6 +57,7 @@ const Home = ({ login, isAuthenticated, loading, user }) => {
             method="POST"
           >
             <div className={styles.Inputs}>
+              {error?<div  style={{ color: 'red' }}>error entering!</div>:<></>}
               <label htmlFor="email-address">EMAIL ADDRESS</label>
               <input
                 id="email-address"
@@ -119,6 +120,7 @@ const Home = ({ login, isAuthenticated, loading, user }) => {
 const mapStateToProps = (state) => ({
   isAuthenticated: state.login.isAuthenticated,
   user: state.login.user,
+  error: state.login.error,
   loading: state.login.loading,
 });
 export default connect(mapStateToProps, {

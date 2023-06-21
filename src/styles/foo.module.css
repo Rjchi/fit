@@ -1,0 +1,79 @@
+.ContainerG {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    box-shadow: -5px -5px 5px #000;
+    background-color: teal;
+}
+
+.ContainerP {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ContainerP p {
+    color: #000;
+}
+
+.ContainerP img {
+    width: 70px;
+    height: 70px;
+    border: 2px solid #000;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.ContainerS {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ContainerS h2, p {
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.Icons {
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width: 550px) {
+    .ContainerP {
+        width: 30%;
+    }
+
+    .ContainerS {
+        width: 70%;
+        align-items: center;
+    }
+
+    .ContainerS p {
+        font-size: small;
+        text-align: center;
+    }
+
+    .Icons img {
+        width: 30px;
+        height: 30px;
+    }
+}
